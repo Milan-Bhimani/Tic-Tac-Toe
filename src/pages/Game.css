@@ -1,5 +1,5 @@
 html, body {
-    height: 100vh;
+    height: 99.85vh;
     margin: 0;
     overflow: hidden;
   }
@@ -59,7 +59,7 @@ html, body {
   }
   
   .game button {
-    height: 85%;
+    height: 80%;
     padding: 10px 10px;
     font-size: 1.2rem;
     margin: 12px; /* Small margin between buttons */
