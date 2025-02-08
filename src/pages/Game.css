@@ -1,0 +1,155 @@
+html, body {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px; /* Small gap between buttons */
+    justify-content: center; /* Center buttons horizontally */
+    margin-top: 1rem; /* Small gap above buttons */
+  }
+  
+  .game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    height: 100vh; /* Keep minimum height */
+    padding: 1rem; /* Reduced padding */
+    background: lightpink;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px; /* Small bottom margin for a tiny gap */
+  }
+  
+  .game h1 {
+    color: #2c3e50;
+    margin-bottom: 0.8rem; /* Slightly reduced bottom margin */
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-out;
+  }
+  
+  .game h2 {
+    color: #34495e;
+    margin: 0.5rem 0; /* Reduced margin */
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .game h2.winner {
+    color: #27ae60;
+    font-size: 2.2rem;
+    animation: pulse 1s infinite;
+  }
+  
+  .game h2.draw {
+    color: #f39c12;
+    animation: drawAnimation 1s ease-in-out;
+  }
+  
+  .game button {
+    height: 85px;
+    padding: 10px 10px;
+    font-size: 1.2rem;
+    margin: 12px; /* Small margin between buttons */
+    background: lightcyan;
+    color: red;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .game button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background: lavenderblush;
+  }
+  
+  .game button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes drawAnimation {
+    0% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.02) rotate(1deg); }
+    75% { transform: scale(0.98) rotate(-1deg); }
+    100% { transform: scale(1) rotate(0deg); }
+  }
+  
+  /* Fireworks effect for winner */
+  .firework {
+    position: absolute;
+    pointer-events: none;
+  }
+  
+  .firework::before {
+    content: '';
+    position: absolute;
+    width: 0.5vmin;
+    aspect-ratio: 1;
+    background: radial-gradient(circle, #ff6b6b, #ee5253, transparent);
+    transform: translate(var(--x), var(--initialY));
+    animation: firework 2s ease-out infinite;
+  }
+  
+  @keyframes firework {
+    0% { transform: translate(var(--x), var(--initialY)); width: 0.5vmin; opacity: 1; }
+    50% { width: 0.5vmin; opacity: 1; }
+    100% { width: 45vmin; opacity: 0; }
+  }
+  
+  @media (max-width: 768px) {
+    .game h1 {
+      font-size: 2.5rem;
+    }
+  
+    .game h2 {
+      font-size: 1.5rem;
+    }
+  
+    .game button {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .game h1 {
+      font-size: 2rem;
+    }
+  
+    .game h2 {
+      font-size: 1.3rem;
+    }
+  
+    .game button {
+      font-size: 1rem;
+    }
+  }
+  
