@@ -59,7 +59,7 @@ html, body {
   }
   
   .game button {
-    height: 85px;
+    height: 85%;
     padding: 10px 10px;
     font-size: 1.2rem;
     margin: 12px; /* Small margin between buttons */
