@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useGame } from '../context/GameContext';
-import './Home.css';  // Add this line
+import './home.css';  // Add this line
 
 function Home() {
   const { resetGame } = useGame();
